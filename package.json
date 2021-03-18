@@ -12,7 +12,7 @@
     "test:html": "html-validate *.html",
     "test:js": "eslint js/",
     "test:scss": "stylelint sass/",
-    "fix-js": "/node_modules/.bin/eslint --fix",
+    "fix-js": "./node_modules/.bin/eslint --fix ./js/script.js",
     "build": "npm-run-all build:* test",
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:autoprefixer": "postcss css/*.css --use autoprefixer -d css",
