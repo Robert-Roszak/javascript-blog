@@ -15,6 +15,12 @@ $font-text: 'Source Sans Pro', sans-serif;
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none !important;
+  line-height: 30px;
+  padding: 5px;
+}
+
 body {
   background: $color-light;
   font-family: $font-text;
@@ -40,6 +46,28 @@ body {
     font-weight: 400;
     color: lighten($color-dark, 20%);
   }
+}
+
+/* Tag sizes */
+
+.tag-size-1 {
+  font-size: 0.6rem;
+}
+
+.tag-size-2 {
+  font-size: 0.8rem;
+}
+
+.tag-size-3 {
+  font-size: 1rem;
+}
+
+.tag-size-4 {
+  font-size: 1.2rem;
+}
+
+.tag-size-5 {
+  font-size: 1.4rem;
 }
 
 /* Layout */
@@ -94,12 +122,6 @@ body {
   .active {
     font-weight: bold;
   }
-
-  a {
-    text-decoration: none;
-    line-height: 30px;
-    padding: 5px;
-  }
 }
 
 .list-horizontal {
@@ -117,20 +139,24 @@ body {
 
   li {
     padding: 10px;
-  }
 
-  .fab {
-    padding: 10px;
-    font-size: 20px;
-    width: 40px;
-    text-align: center;
-    margin: 5px 2px;
-    border-radius: 50%;
-    box-shadow: 5px 5px 10px 0px black;
-    transition: all .5s;
+    a {
+      padding: 0;
+    }
 
-    &:hover {
-      opacity: 0.7;
+    .fab {
+      padding: 10px;
+      font-size: 20px;
+      width: 40px;
+      text-align: center;
+      margin: 5px 2px;
+      border-radius: 50%;
+      box-shadow: 5px 5px 10px 0px black;
+      transition: all .5s;
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 
@@ -173,13 +199,25 @@ body {
     z-index: 1;
     display: block;
     opacity: 1;
-    transition: 1s;
+    transition: all 1s ease-in-out;
     position: relative;
   }
 }
 
 .post-author {
   font-style: italic;
+
+  .active {
+    font-weight: bold;
+  }
+
+  li {
+    list-style-type: none;
+
+    a {
+      padding: 0;
+    }
+  }
 }
 
 .post-tags {
