@@ -81,7 +81,7 @@ function calculateTagClass(count, params) {
   const normalizedCount = count - params.min,
     normalizedMax = params.max - params.min,
     percentage = normalizedCount / normalizedMax,
-    classNumber = Math.floor( percentage * (opts.tagSizes.count - 1) + 1 );
+    classNumber = Math.floor(percentage * (opts.tagSizes.count - 1) + 1 );
   console.log(classNumber);
   return opts.tagSizes.classPrefix+classNumber;
 }
@@ -90,8 +90,8 @@ function generateTags(){
   let allTags = {},
     allTagsHTML = '';
   const articles = document.querySelectorAll(select.all.articles),
-    tagList = document.querySelector(select.listOf.tags),
-    tagsParams = calculateTagsParams(allTags);
+    tagList = document.querySelector(select.listOf.tags);
+
 
   for (let article of articles) {
     let html = '';
@@ -109,6 +109,7 @@ function generateTags(){
     }
     tagsWrapper.innerHTML = html;
   }
+  const tagsParams = calculateTagsParams(allTags);
   console.log('tagsParams:', tagsParams);
 
   for(let tag in allTags){
@@ -148,7 +149,6 @@ function generateAuthors (){
   let allAuthors = {},
     allTagsHTML = '';
   const articles = document.querySelectorAll(select.all.articles),
-    tagsParams = calculateTagsParams(allAuthors),
     authorWrapper = document.querySelector(select.listOf.authors);
 
   for (let article of articles) {
@@ -162,8 +162,7 @@ function generateAuthors (){
     if(!allAuthors[tagAttribute]) allAuthors[tagAttribute] = 1;
     else allAuthors[tagAttribute]++;
   }
-
-  console.log('tagsParams:', tagsParams);
+  const tagsParams = calculateTagsParams(allAuthors);
   for(let tag in allAuthors){
     const tagLinkHTML = `<li><a href="#author-${tag}" class="${calculateTagClass(allAuthors[tag], tagsParams)}">${tag} (${allAuthors[tag]})</a></li>`;
     allTagsHTML += tagLinkHTML;
