@@ -155,7 +155,7 @@ function generateTags(){
       const linkHtml = `<li><a href="#tag-${articleTag}">${articleTag}</a></li>`;
       //   console.log(linkHtml);
       /* add generated code to html variable */
-      html = html + linkHtml;
+      html += linkHtml;
       /* [NEW] check if this link is NOT already in allTags */
       if(!allTags[articleTag]) {
         /* [NEW] add tag to allTags object */
