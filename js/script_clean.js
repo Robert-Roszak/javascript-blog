@@ -97,7 +97,6 @@ function calculateTagClass(count, params) {
     normalizedMax = params.max - params.min,
     percentage = normalizedCount / normalizedMax,
     classNumber = Math.floor(percentage * (opts.tagSizes.count - 1) + 1 );
-
   return opts.tagSizes.classPrefix+classNumber;
 }
 
@@ -199,9 +198,7 @@ function authorClickHandler (event){
   for (let activeLink of activeLinks) {
     if (activeLink) activeLink.classList.remove('active');
   }
-
   for (let tagLink of tagLinks) tagLink.classList.add('active');
-
   generateTitleLinks('[data-author="' + tag + '"]');
   if (clickedElement.classList.contains('tag-outside')) refreshArticle('[data-author="' + tag + '"]');
 }
