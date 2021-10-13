@@ -6,7 +6,7 @@ const templates = {
   articleAuthor: Handlebars.compile(document.querySelector('#template-article-author').innerHTML),
   tagCloudLink: Handlebars.compile(document.querySelector('#template-tag-cloud-link').innerHTML),
   tagCloudAuthor: Handlebars.compile(document.querySelector('#template-tag-cloud-author').innerHTML),
-}
+};
 
 const opts = {
   tagSizes: {
@@ -177,8 +177,8 @@ function generateAuthors (){
     let html = '';
     const tagsWrapper = article.querySelector(select.article.author),
       tagAttribute = article.getAttribute('data-author'),
-        linkHTMLData = {id: tagAttribute, title: tagAttribute},
-        linkHtml = templates.articleAuthor(linkHTMLData);
+      linkHTMLData = {id: tagAttribute, title: tagAttribute},
+      linkHtml = templates.articleAuthor(linkHTMLData);
 
     html += linkHtml;
     tagsWrapper.innerHTML = html;
